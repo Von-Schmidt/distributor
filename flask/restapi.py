@@ -13,7 +13,7 @@ def process():
     string_input3 = int(data.get('string_input3'))
 
     password = passwordgenerator.generate_password(14)
-    
+
     if string_input3 == 1:
         main.create_user(string_input1, password, string_input2)
         main.add_user_to_group(string_input1, "porg")
