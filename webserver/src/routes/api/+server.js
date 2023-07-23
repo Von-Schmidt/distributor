@@ -1,8 +1,9 @@
 import { v4 as uuidv4 } from 'uuid';
 import sqlite3 from 'sqlite3';
 
-export async function post(req) {
-  let db = new sqlite3.Database('./my-database.db', sqlite3.OPEN_READWRITE, (err) => {
+export async function POST(req, res) {
+  console.log(req.body);
+  let db = new sqlite3.Database('./users.db', sqlite3.OPEN_READWRITE, (err) => {
     if (err) {
       console.error(err.message);
     }
@@ -20,10 +21,10 @@ export async function post(req) {
 
   db.close();
   return { body: { status: 'success' } };
-}
+  }
 
-export async function get(req) {
-  let db = new sqlite3.Database('./my-database.db', sqlite3.OPEN_READONLY, (err) => {
+  export async function GET(req) {
+  let db = new sqlite3.Database('./users.db', sqlite3.OPEN_READONLY, (err) => {
     if (err) {
       console.error(err.message);
     }
