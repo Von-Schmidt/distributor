@@ -20,7 +20,9 @@
             string_input3: yesno
         })
         });
+    }
 
+    async function callAPI2() {
         let user = {
             name,
             username,
@@ -28,7 +30,7 @@
             company
         };
         
-        fetch('http://localhost:5173/api/users', {
+        fetch('/api', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -40,7 +42,7 @@
     }
 
     async function test() {
-        fetch('http://localhost:5173/api/users', {
+        fetch('/api', {
             method: 'GET',
         })
     .then(response => response.json())
@@ -53,5 +55,5 @@
 <input type="text" placeholder="username" bind:value={username}>
 <input type="text" placeholder="company" bind:value={company}>
 
-<input type="submit" value="submit" on:click={callAPI}>
+<input type="submit" value="submit" on:click={callAPI2}>
 <button on:click={test}>test</button>
