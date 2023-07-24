@@ -11,7 +11,7 @@
 	</main>
 
 	<footer>
-		<p>made by <a href="https://vincentsmid.xyz">Vincent Šmíd</a></p>
+		<p>Pokud něco nefunguje, tak se obraťte na <a href="https://vincentsmid.xyz">IT oddělení</a></p>
 	</footer>
 </div>
 
