@@ -1,5 +1,6 @@
 <script>
-    import App from './App.svelte';
+    import SubmitApp from './SubmitApp.svelte';
+    import GetApp from './GetApp.svelte';
 </script>
 
 <svelte:head>
@@ -8,13 +9,14 @@
 </svelte:head>
 
 <section>
-    <App />
+    <SubmitApp />
+    <GetApp />
 </section>
 
 <style>
     section {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
         flex: 0.4;
