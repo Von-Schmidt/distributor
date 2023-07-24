@@ -1,5 +1,5 @@
 <script>
-    import GetApp from './GetApp.svelte';
+    import SubmitApp from '../SubmitApp.svelte';
 </script>
 
 <svelte:head>
@@ -8,7 +8,7 @@
 </svelte:head>
 
 <section>
-    <GetApp />
+    <SubmitApp />
 </section>
 
 <style>
