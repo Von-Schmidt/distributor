@@ -9,10 +9,6 @@
 	<main>
 		<slot />
 	</main>
-
-	<footer>
-		<p>Pokud něco nefunguje, tak se obraťte na <a href="https://vincentsmid.xyz">IT oddělení</a></p>
-	</footer>
 </div>
 
 <style>
@@ -38,6 +34,7 @@
 		justify-content: center;
 		align-items: center;
 		padding: 12px;
+		text-align: center;
 	}
 
 	footer a {
