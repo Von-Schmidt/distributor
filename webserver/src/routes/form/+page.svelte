@@ -1,4 +1,6 @@
 <script>
+    import BackButton from '../BackButton.svelte';
+	import HelpButton from '../HelpButton.svelte';
     import SubmitApp from '../SubmitApp.svelte';
 </script>
 
@@ -9,6 +11,8 @@
 
 <section>
     <SubmitApp />
+    <BackButton />
+    <HelpButton />
 </section>
 
 <style>

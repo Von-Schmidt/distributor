@@ -1,5 +1,7 @@
 <script>
     import GetApp from './GetApp.svelte';
+    import AddButton from './AddButton.svelte';
+	import HelpButton from './HelpButton.svelte';
 </script>
 
 <svelte:head>
@@ -9,6 +11,8 @@
 
 <section>
     <GetApp />
+    <AddButton />
+    <HelpButton />
 </section>
 
 <style>
