@@ -1,0 +1,22 @@
+<script>
+    import AdminTable from "./AdminTable.svelte";
+</script>
+
+<svelte:head>
+    <title>DISTRIBUTOR</title>
+    <meta name="description" content="Management distributorů" />
+</svelte:head>
+
+<section>
+    <AdminTable />
+</section>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 0.4;
+    }
+</style>
