@@ -9,6 +9,7 @@
 	--color-theme-1: #3593ff;
 	--color-theme-2: #5edcff;
     --color-theme-3: #5d00ff;
+	--color-theme-4: #f4fdff;
     --color-bg-1: #dbecff;
 	--color-text: rgba(0, 0, 0, 0.7);
 	--column-width: 42rem;
@@ -71,3 +72,10 @@ a:hover {
 	justify-content: center;
 	margin-top: 3rem;
 }
+
+.icon {
+	color: var(--color-bg-1);
+	width: 32px;
+	height: 32px;
+}
+

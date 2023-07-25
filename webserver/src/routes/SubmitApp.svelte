@@ -1,5 +1,6 @@
 <script>
     import './styles.css';
+    import { goto } from '$app/navigation';
 
     let name = "";
     let email = "";
@@ -19,11 +20,14 @@
             string_input4: company
         })
         });
+
+        goto('/');
     }
+    
 </script>
 
 <div class="input-wrapper">
-    <input type="text" in:scale out:fade placeholder="Celé jméno" bind:value={name}>
+    <input type="text" placeholder="Celé jméno" bind:value={name}>
     <input type="text" placeholder="Kontaktní email" bind:value={email}>
     <input type="text" placeholder="Username" bind:value={username}>
     <input type="text" placeholder="Společnost" bind:value={company}>
@@ -79,6 +83,12 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        border: 3px solid var(--color-theme-1);
+        border-radius: 10px;
+        padding: 2rem;
+        background-color: var(--color-theme-4);
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     }
+    
 </style>
 
