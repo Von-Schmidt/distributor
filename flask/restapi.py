@@ -31,6 +31,11 @@ def get_users():
     users = namebase.get_all_users()
     return jsonify(users)
 
+@app.route('/api/<username>', methods=['DELETE'])
+def delete(username):
+    namebase.delete_user(username)
+    main.delete_user(username)
+    return {'result': 'User deleted'}
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')

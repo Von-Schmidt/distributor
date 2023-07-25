@@ -55,7 +55,9 @@ def get_all_users():
     try:
         c = conne.cursor()
         c.execute("SELECT * FROM User")
-        rows = c.fetchall()
+        columns = [column[0] for column in c.description]
+        rows = [dict(zip(columns, row)) for row in c.fetchall()]
+
         close_connection(conne)
         
         return rows
@@ -63,6 +65,20 @@ def get_all_users():
     except Error as e:
         print(e)
         return {'error': str(e)}
+    
+def delete_user(username):
+    conn = create_connection()
+    try:
+        c = conn.cursor()
+        c.execute("""
+            DELETE FROM User 
+            WHERE username=?
+        """, (username,))
+        conn.commit()
+
+    except Error as e:
+        print(e)
+
 
 def main():
     # Creating a connection
