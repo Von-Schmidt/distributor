@@ -1,5 +1,4 @@
 <script>
-    import AdminTable from "./AdminTable.svelte";
     import AdminPanel from "./AdminPanel.svelte";
 </script>
 
@@ -10,7 +9,6 @@
 
 <section>
     <AdminPanel />
-    <AdminTable />
 </section>
 
 <style>
