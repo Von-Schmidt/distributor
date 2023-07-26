@@ -1,5 +1,6 @@
 import sqlite3
 from sqlite3 import Error
+import main
 
 def create_connection():
     conn = None;
@@ -17,7 +18,8 @@ def close_connection(conne):
 
     conn.close()
 
-def create_table(conn):
+def create_table():
+    conn = create_connection()
     try:
         c = conn.cursor()
         c.execute("""
@@ -79,20 +81,23 @@ def delete_user(username):
     except Error as e:
         print(e)
 
-
-def main():
-    # Creating a connection
+def delete_table():
     conn = create_connection()
+    try:
+        c = conn.cursor()
+        c.execute("DROP TABLE IF EXISTS User")
+        conn.commit()
+    
+    except Error as e:
+        print(e)
+    
+    finally:
+        close_connection(conn)
 
-    # Creating table
-    create_table(conn)
+def delete_all_users():
+    users = get_all_users()
 
-    print("All users:")
-    get_all_users()
+    for user in users:
+        username = user['username']
 
-    # Closing connection
-    close_connection(conn)
-
-
-if __name__ == "__main__":
-    main()
+        main.delete_user(username)        
