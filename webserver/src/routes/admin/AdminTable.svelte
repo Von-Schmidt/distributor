@@ -32,12 +32,12 @@
 <table>
     <thead>
     <tr>
-        <th>Company</th>
+        <th>Společnost</th>
         <th>Email</th>
-        <th>Name</th>
+        <th>Jméno</th>
         <th>Username</th>
-        <th>Delete</th>
-        <th>Reset</th>
+        <th>Smazat</th>
+        <th>Resetovat</th>
     </tr>
     </thead>
     <tbody>
@@ -98,7 +98,6 @@
     table td {
         background-color: var(--color-bg-1);
         padding: 10px;
-        border-bottom: 1px solid #ccc;
         font-weight: bold;
     }
 
