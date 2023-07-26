@@ -49,6 +49,32 @@ def create_table():
     namebase.create_table()
     return {'result': 'Table created'}
 
+@app.route('/api/reinitialize', methods=['POST'])
+def reinit():
+    data = request.json
+    conn = namebase.create_connection()
+    present = namebase.get_all_users()
+    if present == False:
+        namebase.delete_all_users()
+    namebase.delete_table()
+    namebase.create_table()
+
+    for user in data:
+        
+        name_it = user.get('name')
+        username_it = user.get('username')
+        company_it = user.get('company')
+        email_it = user.get('email')
+
+        password = passwordgenerator.generate_password(14)
+        main.create_user(username_it, password, email_it)
+        main.add_user_to_group(username_it, groupid)
+        
+        namebase.add_user(name_it, username_it, email_it, company_it)
+
+    namebase.close_connection(conn)
+
+    return {'result': 'Import finished'}
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
