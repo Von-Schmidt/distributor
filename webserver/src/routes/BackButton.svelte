@@ -11,7 +11,7 @@
         right: 40px;
         bottom: 40px;
         background: var(--color-theme-1);
-        color: var(--color-bg-1);
+        color: var(--color-theme-4);
         display: inline-block;
         outline: 0;
         border: 0;
@@ -26,4 +26,9 @@
         z-index: 100;
         width: 18rem;
     }
+
+    button:hover {
+        opacity: 1;
+    }
+
 </style>

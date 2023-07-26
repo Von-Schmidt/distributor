@@ -98,7 +98,6 @@
     table td {
         background-color: var(--color-bg-1);
         padding: 10px;
-        border-bottom: 1px solid #ccc;
         font-weight: bold;
     }
 

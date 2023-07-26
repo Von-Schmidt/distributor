@@ -32,8 +32,12 @@
         
     }
 
+    button:hover {
+        opacity: 1;
+    }
+
     .icon {
-        color: var(--color-bg-1);
+        color: var(--color-theme-4);
         width: 32px;
         height: 32px;
     }

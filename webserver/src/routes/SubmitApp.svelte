@@ -19,7 +19,7 @@
             string_input3: username,
             string_input4: company
         })
-        });
+    });
 
         goto('/');
     }
@@ -56,7 +56,7 @@
 
     input[type="submit"] {
         background: var(--color-theme-1);
-        color: var(--color-bg-1);
+        color: var(--color-theme-4);
         display: inline-block;
         outline: 0;
         border: 0;
@@ -84,7 +84,7 @@
         flex-direction: column;
         justify-content: space-between;
         border: 3px solid var(--color-theme-1);
-        border-radius: 10px;
+        border-radius: 15px;
         padding: 2rem;
         background-color: var(--color-theme-4);
         box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
