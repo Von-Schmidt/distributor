@@ -1,4 +1,5 @@
-from flask import Flask, request, jsonify
+import json
+from flask import Flask, request, jsonify, Response
 from flask_cors import CORS
 import main, passwordgenerator, namebase
 
@@ -10,22 +11,36 @@ cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 def process():
     conn = namebase.create_connection()
 
+    valid = True
+    users_check = namebase.get_all_users()
+
     data = request.json
     name = data.get('string_input1')
     email = data.get('string_input2')
     username = data.get('string_input3')
     company = data.get('string_input4')
 
-    password = passwordgenerator.generate_password(14)
+    for user in users_check:
+        checkeduser = user.get('username')
+        if username == checkeduser:
+            valid = False
+        else:
+            pass
 
-    main.create_user(username, password, email)
-    main.add_user_to_group(username, groupid)
-    
-    namebase.add_user(name, username, email, company)
+    if valid == True:
+        password = passwordgenerator.generate_password(14)
+
+        main.create_user(username, password, email)
+        main.add_user_to_group(username, groupid)
+        
+        namebase.add_user(name, username, email, company)
+        return username
+    else:
+        return json.dumps(False)
 
     namebase.close_connection(conn)
 
-    return username
+    
 
 @app.route('/api', methods=['GET'])
 def get_users():

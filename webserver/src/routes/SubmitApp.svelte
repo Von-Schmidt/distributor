@@ -6,6 +6,8 @@
     let email = "";
     let username = "";
     let company = "";
+    let response = true;
+
 
     async function userPOST() {
         const response = await fetch('http://localhost:5000/api', {
@@ -21,7 +23,7 @@
         })
     });
 
-        goto('/');
+    goto('/');
     }
     
 </script>
@@ -33,6 +35,10 @@
     <input type="text" placeholder="Společnost" bind:value={company}>
     <input type="submit" value="Přidat" on:click={userPOST}>
 </div>
+
+{#if !response}
+    <h1>test</h1>
+{/if}
 
 <style>
     input {
