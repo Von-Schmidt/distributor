@@ -1,11 +1,11 @@
 <script>
-	import distributor from '$lib/images/distributor.svg';
+	import basic_logo_rgb from '$lib/images/basic_logo_rgb.svg';
 </script>
 
 <header>
     <div>
         <a href="/">
-        <img src={distributor} alt="logo">
+        <img src={basic_logo_rgb} alt="logo">
         </a>
     </div>
 </header>
@@ -20,6 +20,11 @@
 
     div {
         width: 40vh;
+    }
+
+    img {
+        width: 25rem;
+        margin-top: 5rem;
     }
     
 </style>
